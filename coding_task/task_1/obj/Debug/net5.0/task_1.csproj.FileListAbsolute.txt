@@ -1,0 +1,16 @@
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\bin\Debug\net5.0\task_1.exe
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\bin\Debug\net5.0\task_1.deps.json
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\bin\Debug\net5.0\task_1.runtimeconfig.json
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\bin\Debug\net5.0\task_1.runtimeconfig.dev.json
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\bin\Debug\net5.0\task_1.dll
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\bin\Debug\net5.0\ref\task_1.dll
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\bin\Debug\net5.0\task_1.pdb
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\task_1.csproj.AssemblyReference.cache
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\task_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\task_1.AssemblyInfoInputs.cache
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\task_1.AssemblyInfo.cs
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\task_1.csproj.CoreCompileInputs.cache
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\task_1.dll
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\ref\task_1.dll
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\task_1.pdb
+C:\Github\Meszaros_Dominik_feladat\coding_task\task_1\obj\Debug\net5.0\task_1.genruntimeconfig.cache
