@@ -6,6 +6,8 @@ namespace task_1
     {
         static void Main(string[] args)
         {
+            string[] chartomb = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " " };
+
             //helyes értékek bekérése
             Console.Write("Üzent: ");
             string input = Console.ReadLine();
@@ -21,9 +23,12 @@ namespace task_1
             }
 
             //kódolás
-            string output = Coding(input, key);
+            string output = Coding(input, key, chartomb);
             Console.WriteLine($"Rejtjelezett üzenet: {output}");
 
+            //dekódolás
+            string possibleInput = Decoding(output, key, chartomb);
+            Console.WriteLine($"\nVisszafelytett üzenet: {possibleInput}");
 
         }
 
@@ -54,10 +59,8 @@ namespace task_1
                 return false;
             }
         }
-
-        static string Coding(string _input, string _key)
+        static string Coding(string _input, string _key, string[] chartomb)
         {
-            string[] chartomb = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " " };
             string _output = "";
 
             for (int i = 0; i < _input.Length; i++)
@@ -73,7 +76,7 @@ namespace task_1
                     k++;
                 }
                 int osszeg = j + k;
-                ;
+                
                 while (osszeg > 26)
                 {
                     osszeg = osszeg - 27;
@@ -82,6 +85,31 @@ namespace task_1
             }
 
             return _output;
+        }
+        static string Decoding(string _output, string _key, string[] chartomb)
+        {
+            string input = "";  //itt az output
+            for (int i = 0; i < _output.Length; i++)
+            {
+                int j = 0;
+                int k = 0;
+                while (j < chartomb.Length && _output[i].ToString() != chartomb[j])
+                {
+                    j++;
+                }
+                while (k < chartomb.Length && _key[i].ToString() != chartomb[k])
+                {
+                    k++;
+                }
+                int ertek = j - k;
+
+                while (ertek < 0)
+                {
+                    ertek = ertek + 27;
+                }
+                input += chartomb[ertek];
+            }
+            return input;
         }
     }
 }
