@@ -6,10 +6,25 @@ namespace task_1
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine().ToLower();
-            string key = Console.ReadLine().ToLower();
+            //helyes értékek bekérése
+            Console.Write("Üzent: ");
+            string input = Console.ReadLine();
+            Console.Write("Kulcs: ");
+            string key = Console.ReadLine();
+            while (!IsInputLegit(input, key))
+            {
+                Console.Clear();
+                Console.Write("Üzent: ");
+                input = Console.ReadLine();
+                Console.Write("Kulcs: ");
+                key = Console.ReadLine();
+            }
 
-            Console.WriteLine(IsInputLegit(input, key));
+            //kódolás
+            string output = Coding(input, key);
+            Console.WriteLine($"Rejtjelezett üzenet: {output}");
+
+
         }
 
         static bool IsInputLegit(string _input, string _key)
@@ -28,7 +43,7 @@ namespace task_1
                     j++;
                 }
 
-                if (i < _input.Length && j < _key.Length)
+                if (i < _input.Length || j < _key.Length)
                 {
                     return false;
                 }
@@ -38,6 +53,35 @@ namespace task_1
             {
                 return false;
             }
+        }
+
+        static string Coding(string _input, string _key)
+        {
+            string[] chartomb = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " " };
+            string _output = "";
+
+            for (int i = 0; i < _input.Length; i++)
+            {
+                int j = 0;
+                int k = 0;
+                while (j < chartomb.Length && _input[i].ToString() != chartomb[j])
+                {
+                    j++;
+                }
+                while (k < chartomb.Length && _key[i].ToString() != chartomb[k])
+                {
+                    k++;
+                }
+                int osszeg = j + k;
+                ;
+                while (osszeg > 26)
+                {
+                    osszeg = osszeg - 27;
+                }
+                _output += chartomb[osszeg];
+            }
+
+            return _output;
         }
     }
 }
