@@ -8,7 +8,7 @@ namespace task_2
         static void Main(string[] args)
         {
             string[] chartomb = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " " };
-            string[] wordtomb = File.ReadAllText("words.txt").Split('\n');
+            string[] wordtomb = File.ReadAllText("word.txt").Split('\n');
 
             //helyes értékek bekérése
             Console.Write("Első mondat: ");
@@ -24,7 +24,8 @@ namespace task_2
                 second = Console.ReadLine();
             }
 
-            
+            string key = Decoding(first, second, wordtomb);
+            Console.WriteLine($"A kulcs: {key}");
         }
         static bool IsInputLegit(string _first, string _second)
         {
@@ -46,7 +47,7 @@ namespace task_2
             }
             else return true;
         }
-        static void Decoding(string _first, string _second, string[] wordtomb)
+        static string Decoding(string _first, string _second, string[] wordtomb)
         {
             string[] chartomb = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " " };
             Random r = new Random();
@@ -65,7 +66,7 @@ namespace task_2
             int secondMessWords = -1;
             while (key.Length != min)
             {
-                string firstNow = wordtomb[r.Next(0, wordtomb.Length)];
+                string firstNow = wordtomb[r.Next(0, wordtomb.Length)]+" ";
                 //firstMessage += firstNow+" ";
                 firstMessWords++;
 
@@ -78,7 +79,7 @@ namespace task_2
                     int k = 0;
                     while (j < chartomb.Length && firstNow[i].ToString() != chartomb[j])
                         j++;
-                    while (k < chartomb.Length && _first[i].ToString() != chartomb[k])
+                    while (k < chartomb.Length && i< _first.Length && _first[i].ToString() != chartomb[k])
                         k++;
 
                     int ertek = k - j;
@@ -100,7 +101,7 @@ namespace task_2
                     {
                         j++;
                     }
-                    while (k < chartomb.Length && _second[i].ToString() != chartomb[k])
+                    while (k < chartomb.Length && i < _second.Length && _second[i].ToString() != chartomb[k])
                     {
                         k++;
                     }
@@ -112,11 +113,11 @@ namespace task_2
                     }
                     //secondMessage += chartomb[ertek]+" ";
                     secondMessWords++;
-                    secondNow += chartomb[ertek];
+                    secondNow += chartomb[ertek]+" ";
                 }
 
                 int index = 0;
-                while (index < wordtomb.Length && wordtomb[index].Contains(secondMessage.Split(" ")[secondMessWords]))
+                while (index < wordtomb.Length && wordtomb[index].Contains(secondNow))
                 {
                     index++;
                 }
@@ -133,6 +134,8 @@ namespace task_2
                     key = keyNow;
                 }
             }
+
+            return key;
         }
     }
 }
