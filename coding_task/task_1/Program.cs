@@ -9,14 +9,14 @@ namespace task_1
             string[] chartomb = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " " };
 
             //helyes értékek bekérése
-            Console.Write("Üzent: ");
+            Console.Write("Üzenet: ");
             string input = Console.ReadLine();
             Console.Write("Kulcs: ");
             string key = Console.ReadLine();
             while (!IsInputLegit(input, key))
             {
                 Console.Clear();
-                Console.Write("Üzent: ");
+                Console.Write("Üzenet: ");
                 input = Console.ReadLine();
                 Console.Write("Kulcs: ");
                 key = Console.ReadLine();
