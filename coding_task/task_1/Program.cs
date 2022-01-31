@@ -62,7 +62,7 @@ namespace task_1
         static string Coding(string _input, string _key, string[] chartomb)
         {
             string _output = "";
-
+            //o=i+k
             for (int i = 0; i < _input.Length; i++)
             {
                 int j = 0;
@@ -89,6 +89,7 @@ namespace task_1
         static string Decoding(string _output, string _key, string[] chartomb)
         {
             string input = "";  //itt az output
+            //i=o-k
             for (int i = 0; i < _output.Length; i++)
             {
                 int j = 0;
